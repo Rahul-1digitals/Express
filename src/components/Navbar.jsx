@@ -1,19 +1,45 @@
-import React from 'react';
-import { FaSearch, FaUser, FaShoppingBag } from 'react-icons/fa';
+import React, { useState, useRef, useEffect } from 'react';
+import { FaSearch, FaUser, FaShoppingBag, FaSignOutAlt } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import './Navbar.scss';
 
-const Navbar = () => {
+const Navbar = ({ onLogout }) => {
   const navigate = useNavigate();
+  const [showDropdown, setShowDropdown] = useState(false);
+  const dropdownRef = useRef(null);
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setShowDropdown(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
 
   const handleLogoClick = () => {
     navigate('/');
   };
 
+  const handleLogoutClick = () => {
+    if (onLogout) {
+      onLogout();
+    }
+    navigate('/login');
+  };
+
+  const toggleDropdown = () => {
+    setShowDropdown(!showDropdown);
+  };
+
   return (
     <nav className="navbar">
       <div className="navbar__logo" onClick={handleLogoClick} style={{ cursor: 'pointer' }}>
-        {/* Replace with actual logo image if available */}
         <span className="navbar__brand">EXPRESS</span>
       </div>
       <ul className="navbar__links">
@@ -27,7 +53,26 @@ const Navbar = () => {
       </ul>
       <div className="navbar__icons">
         <button aria-label="Search" className="navbar__icon-btn"><FaSearch /></button>
-        <button aria-label="User Profile" className="navbar__icon-btn"><FaUser /></button>
+        <div className="user-dropdown" ref={dropdownRef}>
+          <button 
+            aria-label="User Profile" 
+            className="navbar__icon-btn" 
+            onClick={toggleDropdown}
+          >
+            <FaUser />
+          </button>
+          {showDropdown && (
+            <div className="dropdown-menu">
+              <div className="user-email">demo@1digitals.com</div>
+              <button 
+                className="logout-button" 
+                onClick={handleLogoutClick}
+              >
+                <FaSignOutAlt /> Logout
+              </button>
+            </div>
+          )}
+        </div>
         <button aria-label="Shopping Bag" className="navbar__icon-btn"><FaShoppingBag /></button>
       </div>
     </nav>
