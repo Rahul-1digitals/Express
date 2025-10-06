@@ -1,6 +1,5 @@
 import React, { useState, useMemo } from 'react';
 import { useParams, useLocation, useNavigate } from 'react-router-dom';
-import Navbar from './Navbar';
 import VideoFullscreen from './VideoFullscreen';
 import './ProductDetailPage.scss';
 
@@ -68,8 +67,6 @@ export default function ProductDetailPage() {
 
   return (
     <div className="product-detail-page">
-      <Navbar />
-
       {/* Decorative background text */}
       <div className="decor-text" aria-hidden="true">YOUR CREATION</div>
 

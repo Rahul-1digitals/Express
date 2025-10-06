@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Navbar from './Navbar';
 import { FaFilter, FaPalette, FaGem, FaRedo, FaUpload, FaMicrophone } from 'react-icons/fa';
 import { FaInstagram, FaFacebook, FaTwitter, FaYoutube } from 'react-icons/fa';
 import './ShoeDesignPage.scss';
@@ -72,9 +71,6 @@ const ShoeDesignPage = () => {
 
   return (
     <div className="shoe-design-page">
-      {/* Header Navigation */}
-      <Navbar />
-      
       {/* Main Content */}
       <div className="design-main-content">
         {/* Style Selector */}

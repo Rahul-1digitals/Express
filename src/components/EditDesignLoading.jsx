@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Navbar from './Navbar';
 import './EditDesignLoading.scss';
 
 const EditDesignLoading = ({ isVisible, onComplete }) => {
@@ -60,9 +59,6 @@ const EditDesignLoading = ({ isVisible, onComplete }) => {
   if (!isVisible) return null;
   return (
     <div className={`edit-design-loading ${showContent ? 'fade-in' : 'fade-out'}`}>
-      {/* Header Navigation */}
-      <Navbar />
-      
       {/* Main Content Section */}
       <div className="loading-content">
         {/* Main Heading */}

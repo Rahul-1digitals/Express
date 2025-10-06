@@ -8,6 +8,14 @@
   z-index: 1000;
   background: #000;
   overflow: hidden;
+  
+  /* Ensure navbar appears above video */
+  .navbar {
+    position: relative;
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+  }
 }
 
 /* Background Video */

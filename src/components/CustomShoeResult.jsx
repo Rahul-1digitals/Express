@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { FaTimes, FaMicrophone } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
-import Navbar from './Navbar';
 import EditDesignLoading from './EditDesignLoading';
 import './CustomShoeResult.scss';
 
@@ -104,9 +103,6 @@ const CustomShoeResult = ({ onClose, onBack }) => {
 
   return (
     <div className={`custom-shoe-result ${isVisible ? 'fade-in' : 'fade-out'}`}>
-      {/* Reuse existing Navbar */}
-      <Navbar />
-
       {/* Page Title with Close Button */}
       <div className="page-title">
         <h1>YOUR CUSTOM EXPRESS</h1>
