@@ -17,11 +17,11 @@ export default function ProductDetailPage() {
       build: 'Custom build configuration',
       price: '$70.00',
       images: [
-        `/images/${designId || 'design'}/${designId || 'design'}_item1.png`,
-        `/images/${designId || 'design'}/${designId || 'design'}_item2.png`,
-        `/images/${designId || 'design'}/${designId || 'design'}_item3.png`,
+        `/express/images/${designId || 'design'}/${designId || 'design'}_item1.png`,
+        `/express/images/${designId || 'design'}/${designId || 'design'}_item2.png`,
+        `/express/images/${designId || 'design'}/${designId || 'design'}_item3.png`,
       ],
-      video: `/videos/${designId || 'design'}/${designId || 'design'}_video.mp4`,
+      video: `/express/videos/${designId || 'design'}/${designId || 'design'}_video.mp4`,
       sizes: defaultSizes,
     };
     return { ...fallback, ...(state?.item || {}) };

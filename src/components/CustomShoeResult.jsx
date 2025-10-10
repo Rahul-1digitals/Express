@@ -11,23 +11,23 @@ const CustomShoeResult = ({ onClose, onBack }) => {
   const [currentStep, setCurrentStep] = useState(0);
   const [displayedText, setDisplayedText] = useState('');
   const [isTyping, setIsTyping] = useState(false);
-  const [currentImage, setCurrentImage] = useState('/images/custom-shoe-leopard.png');
+  const [currentImage, setCurrentImage] = useState('/express/images/custom-shoe-leopard.png');
   const [showEditLoading, setShowEditLoading] = useState(false);
 
   const steps = [
     {
       text: "luxury trench coat with a bold red plaid pattern",
-      image: "/images/custom-shoe-leopard.png",
+      image: "/express/images/custom-shoe-leopard.png",
       features: ["luxury trench coat", "bold red plaid pattern"]
     },
     {
       text: "show me the black and white version",
-      image: "/images/custom-shoe-leopard-black-white.png",
+      image: "/express/images/custom-shoe-leopard-black-white.png",
       features: ["luxury trench coat", "bold red plaid pattern", "Black & White"]
     },
     {
       text: "change the color theme to warm tones",
-      image: "/images/custom-shoe-leopard-warm.png",
+      image: "/express/images/custom-shoe-leopard-warm.png",
       features: ["Skateboard shoes", "Nineties style", "Leopard pattern", "Black & White", "Warm Tones"]
     }
   ];

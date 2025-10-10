@@ -17,10 +17,10 @@ const ShoeDesignPage = () => {
   });
 
   const baseDesigns = [
-    { id: 1, name: 'DESIGN 1', image: '/images/design1.png', leopardImage: '/images/design1_lepoard.png', price: '$70' },
-    { id: 2, name: 'DESIGN 2', image: '/images/design2.png', leopardImage: '/images/design2_lepoard.png', price: '$70' },
-    { id: 3, name: 'DESIGN 3', image: '/images/design3.png', leopardImage: '/images/design3_lepoard.png', price: '$70' },
-    { id: 4, name: 'DESIGN 4', image: '/images/design4.png', leopardImage: '/images/design4_lepoard.png', price: '$70' }
+    { id: 1, name: 'DESIGN 1', image: '/express/images/design1.png', leopardImage: '/express/images/design1_lepoard.png', price: '$70' },
+    { id: 2, name: 'DESIGN 2', image: '/express/images/design2.png', leopardImage: '/express/images/design2_lepoard.png', price: '$70' },
+    { id: 3, name: 'DESIGN 3', image: '/express/images/design3.png', leopardImage: '/express/images/design3_lepoard.png', price: '$70' },
+    { id: 4, name: 'DESIGN 4', image: '/express/images/design4.png', leopardImage: '/express/images/design4_lepoard.png', price: '$70' }
   ];
 
   // Save state to sessionStorage whenever it changes
@@ -145,11 +145,11 @@ const ShoeDesignPage = () => {
                               build: showLeopardVariants ? 'luxury trench coat / bold stripes' : 'luxury trench coat',
                               price: design.price,
                               images: [
-                                `/images/${baseKey}/${key}_item1.png`,
-                                `/images/${baseKey}/${key}_item2.png`,
-                                `/images/${baseKey}/${key}_item3.png`,
+                                `/express/images/${baseKey}/${key}_item1.png`,
+                                `/express/images/${baseKey}/${key}_item2.png`,
+                                `/express/images/${baseKey}/${key}_item3.png`,
                               ],
-                              video: `/videos/${baseKey}/${key}_video.mp4`,
+                              video: `/express/videos/${baseKey}/${key}_video.mp4`,
                               sizes: ['6', '6.5', '7', '7.5', '8', '8.5', '9', '9.5', '10', '10.5', '11'],
                             };
                             navigate(`/product/${key}`, { state: { item } });

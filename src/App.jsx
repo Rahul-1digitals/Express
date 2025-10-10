@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useNavigate, Navigate } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import HeroSection from './components/HeroSection';
 import CarouselSection from './components/CarouselSection';
@@ -13,7 +13,7 @@ function HomePage() {
   const navigate = useNavigate();
 
   const handleShowCustomResult = () => {
-    navigate('/custom-cloth');
+    navigate('custom-cloth');
   };
 
   return (
@@ -21,7 +21,7 @@ function HomePage() {
       {/* Global video background */}
       <video
         className="global-hero-video"
-        src="/videos/hero.webm"
+        src="/express/videos/hero.webm"
         autoPlay
         loop
         muted
@@ -42,11 +42,11 @@ function CustomShoePage() {
   const navigate = useNavigate();
 
   const handleClose = () => {
-    navigate('/');
+    navigate('/express/');
   };
 
   const handleBack = () => {
-    navigate('/');
+    navigate('/express/');
   };
 
   return (
@@ -61,7 +61,7 @@ function ShoeDesignPageRoute() {
 
 function App() {
   return (
-    <Router>
+    <Router basename="/express">
       <Routes>
         <Route path="/" element={
           <>
@@ -87,6 +87,7 @@ function App() {
             <ProductDetailPage />
           </>
         } />
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </Router>
   );

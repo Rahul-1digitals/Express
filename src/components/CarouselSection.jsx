@@ -3,10 +3,10 @@ import Slider from 'react-slick';
 import './CarouselSection.scss';
 
 const carouselVideos = [
-  { src: '/videos/carousel1.mp4', label: 'EFFORTLESS SETS' },
-  { src: '/videos/carousel2.mp4', label: 'NEXT-LEVEL SUITS' },
-  { src: '/videos/carousel3.mp4', label: 'OUTERWEAR' },
-  { src: '/videos/carousel4.mp4', label: 'LUXE LAYERS' }
+  { src: '/express/videos/carousel1.mp4', label: 'EFFORTLESS SETS' },
+  { src: '/express/videos/carousel2.mp4', label: 'NEXT-LEVEL SUITS' },
+  { src: '/express/videos/carousel3.mp4', label: 'OUTERWEAR' },
+  { src: '/express/videos/carousel4.mp4', label: 'LUXE LAYERS' }
 ];
 
 const CarouselSection = () => {
